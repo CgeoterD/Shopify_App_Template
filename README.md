@@ -1,1 +1,2 @@
-# ShopifyNodeAppTemplate
+# Shopify App Template - Node
+
