@@ -19,13 +19,6 @@ const app = express();
 app.get(shopify.config.auth.path, shopify.auth.begin());
 app.get(shopify.config.auth.callbackPath,shopify.auth.callback(),shopify.redirectToShopifyOrAppRoot());
 
-
-//* API ENDPOINTS (All endpoints after this point will require an active session)
-app.use("/api/*", shopify.validateAuthenticatedSession());
-app.use(express.json());
-app.use(`/api`, apiRequest)
-
-
 //* Webhooks 
 // Webhook process (webhook handlers in webhook folder webhooks.js)
 app.post(shopify.config.webhooks.path,shopify.processWebhooks({ webhookHandlers: WebhookHandlers }));
@@ -38,6 +31,11 @@ app.post('/api/webhook/register', async (req,res) => {
   res.status(200).send('Webhook registered!')
 
 })
+
+//* API ENDPOINTS (All endpoints after this point will require an active session)
+app.use("/api/*", shopify.validateAuthenticatedSession());
+app.use(express.json());
+app.use(`/api`, apiRequest)
 
 
 //* Frontend endpoint 
