@@ -1,6 +1,5 @@
 import { Card, EmptyState, Page } from "@shopify/polaris";
-import { notFoundImage } from "../assets";
-
+import notFoundIcon from '../assets/empty-state.svg'
 export default function NotFound() {
   return (
     <Page>
@@ -8,7 +7,7 @@ export default function NotFound() {
         <Card.Section>
           <EmptyState
             heading="There is no page at this address"
-            image={notFoundImage}
+            image={notFoundIcon}
           >
             <p>
               Check the URL and try again, or use the search bar to find what

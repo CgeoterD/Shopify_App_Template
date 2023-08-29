@@ -1,8 +1,8 @@
-import { BillingInterval, ApiVersion } from "@shopify/shopify-api";
+import { BillingInterval, LATEST_API_VERSION } from "@shopify/shopify-api";
 import { shopifyApp } from "@shopify/shopify-app-express";
 import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
 let { restResources } = await import(
-  `@shopify/shopify-api/rest/admin/${ApiVersion.October22}`
+  `@shopify/shopify-api/rest/admin/2023-07`
 );
 
 const DB_PATH = `${process.cwd()}/database.sqlite`;
@@ -20,7 +20,7 @@ const billingConfig = {
 
 const shopify = shopifyApp({
   api: {
-    apiVersion: ApiVersion.October22,
+    apiVersion: LATEST_API_VERSION,
     restResources,
     billing: undefined, // or replace with billingConfig above to enable example billing
   },

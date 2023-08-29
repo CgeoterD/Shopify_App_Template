@@ -21,8 +21,8 @@ export default function App() {
             <NavigationMenu
               navigationLinks={[
                 {
-                  label: "Test page",
-                  destination: "/test",
+                  label: "Examples of Queries",
+                  destination: "/queries",
                 },
               ]}
             />
