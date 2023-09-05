@@ -1,5 +1,4 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-scopes = "read_products,write_products"
-
+scopes = "read_products,write_products,read_orders,read_customers,customer_read_orders,read_cart_transforms,write_cart_transforms,write_discounts"
 

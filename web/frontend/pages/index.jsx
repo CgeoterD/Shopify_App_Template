@@ -1,7 +1,5 @@
-import {Page, Layout, LegacyCard, Text} from '@shopify/polaris';
+import {Page, Layout, LegacyCard, Text, Button} from '@shopify/polaris';
 import {TitleBar} from "@shopify/app-bridge-react";
-import {useAuthenticatedFetch} from "../hooks/index.js";
-import {Link} from "react-router-dom";
 
 export default function HomePage() {
 
